@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Page</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .main-image {
+      max-width: 600px; /* задаем максимальную ширину для маленькой фотографии */
+    }
+
+    .fullscreen-image {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+      opacity: 0;
+    }
+
+    .fullscreen-image.show {
+      display: block;
+      opacity: 1;
+    }
+
+    .fullscreen-image img {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+      display: block;
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Привет, Майами!</h1>
+    <p>
+Майа́ми (англ. Miami) — город, расположенный на побережье Атлантического океана на юго-востоке Флориды в округе Майами-Дейд, самом населённом округе в штате Флорида и восьмом по численности населения в Соединённых Штатах Америки с населением в 2 500 625 человек. 43-й по величине город в Соединенных Штатах с населением в 433 136 человек. Это второй по величине (после Джэксонвилла) город во Флориде и самый большой мегаполис на юго-востоке США].
+По оценкам Организации Объединенных Наций Майами был пятой по числу жителей городской агломерацией в США в 2000 году с населением в 4 919 036 человек, а в 2008 году это число увеличилось до 5 232 342, что делает Майами четвёртой по величине агломерацией страны после Нью-Йорка, Лос-Анджелеса и Чикаго.
+Майами официально получил статус города 28 июля 1896 года, в то время в нём проживало несколько сотен человек. В 1940 году в городе было уже около 172 тысяч человек. Согласно переписи населения 2000 года в самом городе жило более 362 тыс. человек, а если считать с пригородами, то 5,4 млн человек.
+В центре Майами и Южной Флориде располагается наибольшая концентрация международных банков в Соединенных Штатах, здесь также находятся штаб-квартиры многих крупных компаний национального и международного уровня 
+
+.</p>
+    <img src="https://sportishka.com/uploads/posts/2022-03/1647147628_16-sportishka-com-p-maiami-bich-florida-turizm-krasivo-foto-16.jpg" class="main-image">
+    <button id="fullscreen-btn" class="btn btn-primary">Нажми</button>
+    <div class="fullscreen-image" id="fullscreen-image">
+      <span class="close-btn">&times;</span>
+      <img src="https://sportishka.com/uploads/posts/2022-03/1647147628_16-sportishka-com-p-maiami-bich-florida-turizm-krasivo-foto-16.jpg" alt="Fullscreen Image">
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#fullscreen-btn").click(function(){
+        $("#fullscreen-image").toggleClass('show');
+      });
+      
+      $(".close-btn").click(function(){
+        $("#fullscreen-image").removeClass('show');
+      });
+    });
+  </script>
+</body>
+</html>
